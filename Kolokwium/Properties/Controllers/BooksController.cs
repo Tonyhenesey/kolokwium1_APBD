@@ -13,7 +13,7 @@ public class BooksController : ControllerBase {
         _bookService = bookService;
     }
 
-    [HttpPost]
+    [HttpPost(" api/books")]
     public async Task<IActionResult> AddBook([FromBody] BookDto bookDto) {
         if (bookDto == null || string.IsNullOrWhiteSpace(bookDto.Title) || !bookDto.Authors.Any()) {
             return BadRequest("Wprowadzono błedne dane");
